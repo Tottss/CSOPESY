@@ -4,16 +4,16 @@
 
 using namespace std;
 
-// Function to clear the console screen cross-platform
+
 void clearScreen() {
 #ifdef _WIN32
-    system("cls"); // Specifically handles the Windows environment seen in the screenshot
+    system("cls"); 
 #else
     system("clear"); 
 #endif
 }
 
-// Function to print the ASCII header and initial text
+
 void printHeader() {
     cout << "Hello, Welcome to the CSOPESY commandline!\n";
     cout << "Enter 'exit' to quit, 'clear' to clear the screen\n\n";
