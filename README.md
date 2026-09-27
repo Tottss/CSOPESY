@@ -1,15 +1,22 @@
-# CSOPESY
+# CSOPESY Semi-Major Output 1 - Marquee Operator
 
-# Instructions
-1. navigate to folder in CMD
-2. run "g++ main.cpp -o csopesy.exe"
-3. run ".\csopesy.exe"
-4. commands accepted:
-        exit
-        clear
-        initialize
-        screen
-        scheduler-start
-        scheduler-stop
-        report-util
-5. Show what happens when you input all commands and show what happens when you input an unknown command
+## Instructions
+1. Open Command Prompt or PowerShell in this directory.
+2. Compile:
+   ```bash
+   g++ main.cpp -o csopesy.exe
+   ```
+3. Run:
+   ```bash
+   .\main.exe
+   ```
+
+## Supported Commands
+- `help`: Displays commands and descriptions.
+- `clear`: Clears the console screen and redraws the header.
+- `start_marquee`: Starts the marquee animation.
+- `stop_marquee`: Stops the marquee animation.
+- `set_text <str>`: Sets the marquee display text (e.g., `set_text Welcome to CSOPESY!`).
+- `set_speed <ms>`: Sets the marquee animation refresh in milliseconds (e.g., `set_speed 100`).
+- `set_polling <ms>`: Sets keyboard polling interval in milliseconds (e.g., `set_polling 15`).
+- `exit`: Terminates the console.
