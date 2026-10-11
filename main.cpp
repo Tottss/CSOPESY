@@ -274,7 +274,11 @@ int main()
             lastFrameTime = now;
         }
 
-        this_thread::sleep_for(chrono::milliseconds(pollingRateMs));
+        #ifdef _WIN32
+            Sleep(pollingRateMs);
+        #else
+            this_thread::sleep_for(chrono::milliseconds(pollingRateMs));
+        #endif
     }
 
     return 0;
