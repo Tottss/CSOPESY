@@ -22,6 +22,7 @@ Usage:
 - Terminal commands: help, neofetch, ls, pwd, whoami, date, uname, clear.
 
 How to run (Using MSYS2 UCRT64)
+Install msys2 from "https://www.msys2.org/"
 1.Open MSYS2 UCRT64
 2.Run "pacman -Syu"
 3.RUn "pacman -S --needed git mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-glfw"

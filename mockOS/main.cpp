@@ -1,4 +1,4 @@
-// CSOPESY Desktop OS Emulator - Linux based design
+// CSOPESY Desktop OS Emulator - Linuxus based design
 // Stack: GLFW + OpenGL3 + Dear ImGui
 
 
@@ -59,7 +59,7 @@ static void ApplyTheme()
 // boot / shutdown
 struct BootLine { float t; bool ok; const char* txt; };
 static const BootLine BOOT_LINES[] = {
-    {0.00f, false, "CSOPESY GNU/Linux 1.0 (csopesy-pc) - kernel 6.8.0-csopesy"},
+    {0.00f, false, "CSOPESY GNU/lunixus 1.0 (csopesy-pc) - kernel 6.8.0-csopesy"},
     {0.15f, false, "CPU: Pentium III   RAM: 64000K OK   BIOS: BCN SIT 1989-1994 Special CSOPESY"},
     {0.35f, true,  "Reached target Local File Systems."},
     {0.60f, true,  "Started Journal Service."},
@@ -329,7 +329,7 @@ static void RunCmd(Term& t, const std::string& c)
     } else if (c == "whoami") {
         t.lines.push_back("guest");
     } else if (c == "uname" || c == "uname -a") {
-        t.lines.push_back("Linux csopesy-pc 6.8.0-csopesy #1 SMP PREEMPT x86_64 GNU/Linux");
+        t.lines.push_back("Linuxus csopesy-pc 6.8.0-csopesy #1 SMP PREEMPT x86_64 GNU/Linuxusus");
     } else if (c == "date") {
         time_t n = time(nullptr); char b[64];
         strftime(b, sizeof b, "%a %b %d %H:%M:%S %Y", localtime(&n));
@@ -339,7 +339,7 @@ static void RunCmd(Term& t, const std::string& c)
         snprintf(up, sizeof up, "Uptime: %d min, %d sec", s / 60, s % 60);
         t.lines.push_back("guest@csopesy-pc");
         t.lines.push_back("----------------");
-        t.lines.push_back("OS: CSOPESY GNU/Linux 1.0 x86_64");
+        t.lines.push_back("OS: CSOPESY GNU/Linuxusus 1.0 x86_64");
         t.lines.push_back("Kernel: 6.8.0-csopesy");
         t.lines.push_back(up);
         t.lines.push_back("Shell: bash 5.2");
@@ -355,7 +355,7 @@ static void DrawTerminal()
 {
     if (!g_showTerm) return;
     if (!g_term.init) {
-        g_term.lines.push_back("CSOPESY GNU/Linux 1.0  -  type 'help' for commands");
+        g_term.lines.push_back("CSOPESY GNU/Linuxus 1.0  -  type 'help' for commands");
         g_term.init = true;
     }
     ImGui::SetNextWindowPos(ImVec2(200, 130), ImGuiCond_FirstUseEver);
@@ -468,7 +468,7 @@ static void DrawAbout()
     ImGui::SetNextWindowPos(ImVec2(340, 140), ImGuiCond_FirstUseEver);
     ImGui::SetNextWindowSize(ImVec2(420, 260), ImGuiCond_FirstUseEver);
     if (ImGui::Begin("About", &g_showAbout)) {
-        ImGui::TextColored(ImVec4(0.914f, 0.329f, 0.125f, 1), "CSOPESY GNU/Linux 1.0");
+        ImGui::TextColored(ImVec4(0.914f, 0.329f, 0.125f, 1), "CSOPESY GNU/Linuxus 1.0");
         ImGui::Separator();
         ImGui::Text("Device name:   csopesy-pc");
         ImGui::Text("Processor:     Pentium III");
