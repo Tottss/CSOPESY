@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="CSOPESY/CSOPESY.vcxproj" Id="e1b26242-35ce-42e0-962c-5b3b27b8d9dc" />
+</Solution>

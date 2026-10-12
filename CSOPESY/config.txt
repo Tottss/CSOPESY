@@ -1,0 +1,38 @@
+# CSOPESY Desktop OS Emulator - Runtime Configuration (config.txt)
+# Edit values here before launching the executable.
+
+# Window Settings
+window_title  = CSOPESY Desktop OS Emulator
+window_width  = 1280
+window_height = 720
+
+# Taskbar Settings
+# taskbar_at_bottom accepts: true / false (or bottom / top)
+taskbar_height    = 52.0
+taskbar_at_bottom = true
+
+# Wallpaper Gradient Colors (R, G, B, A in 0..255)
+wallpaper_top_left     = 18, 42, 86, 255
+wallpaper_top_right    = 34, 82, 142, 255
+wallpaper_bottom_right = 28, 110, 96, 255
+wallpaper_bottom_left  = 16, 68, 78, 255
+
+# Clock Format (std::strftime format string)
+clock_format = %A, %b %d, %Y  |  %I:%M:%S %p
+
+# Task Manager Settings
+total_system_memory_mb = 4096.0
+task_manager_wobble    = false
+
+# Dummy Process List
+# Format: process = <Name> | <PID> | <Status> | <CPU%> | <MemoryMB>
+process = csopesy_compositor.exe | 104  | Running    | 4.2  | 148.5
+process = window_manager.exe     | 218  | Running    | 2.1  | 84.2
+process = taskmgr.exe            | 412  | Running    | 1.5  | 52.8
+process = file_explorer.exe      | 520  | Running    | 0.8  | 64.0
+process = sys_info_service.exe   | 608  | Running    | 0.4  | 31.4
+process = desktop_clock.exe      | 715  | Running    | 0.2  | 18.6
+process = audio_endpoint.exe     | 884  | Background | 0.3  | 27.9
+process = network_daemon.exe     | 932  | Background | 0.6  | 41.2
+process = security_health.exe    | 1104 | Background | 0.5  | 58.0
+process = system_idle.exe        | 4    | Running    | 89.4 | 0.4
