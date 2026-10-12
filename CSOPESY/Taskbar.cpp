@@ -127,13 +127,22 @@ void RenderTaskbar(const ImGuiIO& io, AppState& state)
         ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(0.58f, 0.12f, 0.14f, 1.0f));
         ImGui::PushStyleVar(ImGuiStyleVar_FrameRounding, 6.0f);
 
-        if (ImGui::Button("PWR", ImVec2(pwrW, btnH)))
-            state.isRunning = false;
+        if (ImGui::Button("PWR", ImVec2(pwrW, btnH)))ImGui::OpenPopup("power");
+        
+        if (ImGui::BeginPopup("power")) {
+            ImGui::TextUnformatted("Power Off");
+            ImGui::Separator();
+            if (ImGui::MenuItem("Shut Down...")) state.isRunning = false;
+            ImGui::MenuItem("Cancel");
+            ImGui::EndPopup();
+        }
+            
 
         ImGui::PopStyleVar();
         ImGui::PopStyleColor(3);
 
-        ImGui::BringWindowToDisplayFront(ImGui::GetCurrentWindow());
+        if (!ImGui::IsPopupOpen("power"))
+            ImGui::BringWindowToDisplayFront(ImGui::GetCurrentWindow());
     }
     ImGui::End();
     ImGui::PopStyleVar(2);
