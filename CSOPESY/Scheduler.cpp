@@ -22,7 +22,7 @@ namespace Sched
         return buf;
     }
 
-    // ---------------- Process ----------------
+    // Process
     Process::Process(std::string n, int total)
         : name(std::move(n)), createdAt(Timestamp()), totalCommands(total)
     {
@@ -41,7 +41,7 @@ namespace Sched
             << " \"Hello world from " << name << "!\"\n";
     }
 
-    // ---------------- Scheduler ----------------
+    // Scheduler
     Scheduler& Scheduler::Instance()
     {
         static Scheduler s;
@@ -60,7 +60,7 @@ namespace Sched
                 std::snprintf(nm, sizeof(nm), "process%02d", i);
                 auto p = std::make_shared<Process>(nm, commandsPerProcess);
                 all_.push_back(p);
-                ready_.push_back(p);          // FCFS: queue order == creation order
+                ready_.push_back(p);     
             }
         }
 
@@ -90,7 +90,7 @@ namespace Sched
         return false;
     }
 
-    // The scheduler thread: hands the HEAD of the ready queue to any idle core.
+    
     void Scheduler::SchedulerLoop()
     {
         std::unique_lock<std::mutex> lk(m_);
@@ -107,11 +107,11 @@ namespace Sched
                     ready_.pop_front();
                 }
             }
-            cv_.notify_all();   // wake the workers that just got a job
+            cv_.notify_all();   
         }
     }
 
-    // One thread per CPU core: run the assigned process to completion (non-preemptive FCFS).
+    
     void Scheduler::WorkerLoop(int coreId)
     {
         while (true)
@@ -142,13 +142,13 @@ namespace Sched
 
             {
                 std::lock_guard<std::mutex> lk(m_);
-                cores_[coreId].job.reset();   // core is free again
+                cores_[coreId].job.reset();  
             }
-            cv_.notify_all();                 // tell the scheduler
+            cv_.notify_all();                 
         }
     }
 
-    // ---------------- screen -ls ----------------
+    //screen -ls 
     std::string Scheduler::StatusReport()
     {
         std::lock_guard<std::mutex> lk(m_);
