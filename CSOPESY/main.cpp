@@ -10,6 +10,8 @@
 #include "SystemInfoWindow.h"
 #include "TaskManager.h"
 #include "Taskbar.h"
+#include "TerminalWindow.h"
+#include "Scheduler.h"
 
 #include <cstdio>
 #include <filesystem>
@@ -81,6 +83,7 @@ int main(int, char**)
 
     AppState appState;
 
+    Sched::Scheduler::Instance().Start(10, 100);
     // Main Compositor Loop
     while (appState.isRunning)
     {
@@ -97,6 +100,7 @@ int main(int, char**)
         RenderSystemInfoWindow(appState);
         RenderFileExplorerWindow(appState);
         RenderTaskManagerWindow(appState);
+        RenderTerminalWindow(appState);
 
         // Fixed Taskbar Panel
         RenderTaskbar(io, appState);
@@ -111,6 +115,8 @@ int main(int, char**)
 
         glfwSwapBuffers(window);
     }
+
+    Sched::Scheduler::Instance().Stop();
 
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();

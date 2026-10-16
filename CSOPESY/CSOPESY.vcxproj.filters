@@ -60,6 +60,12 @@
     <ClCompile Include="..\third_party\imgui\backends\imgui_impl_opengl3.cpp">
       <Filter>imgui\backends</Filter>
     </ClCompile>
+    <ClCompile Include="Scheduler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TerminalWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppState.h">
@@ -100,6 +106,12 @@
     </ClInclude>
     <ClInclude Include="..\third_party\imgui\backends\imgui_impl_opengl3_loader.h">
       <Filter>imgui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="Scheduler.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TerminalWindow.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

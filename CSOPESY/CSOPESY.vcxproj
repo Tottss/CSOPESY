@@ -23,6 +23,7 @@
     <ClCompile Include="Desktop.cpp" />
     <ClCompile Include="FileExplorerWindow.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Scheduler.cpp" />
     <ClCompile Include="SystemInfoWindow.cpp" />
     <ClCompile Include="Taskbar.cpp" />
     <ClCompile Include="TaskManager.cpp" />
@@ -32,12 +33,14 @@
     <ClCompile Include="..\third_party\imgui\imgui_widgets.cpp" />
     <ClCompile Include="..\third_party\imgui\backends\imgui_impl_glfw.cpp" />
     <ClCompile Include="..\third_party\imgui\backends\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="TerminalWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppState.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="Desktop.h" />
     <ClInclude Include="FileExplorerWindow.h" />
+    <ClInclude Include="Scheduler.h" />
     <ClInclude Include="SystemInfoWindow.h" />
     <ClInclude Include="Taskbar.h" />
     <ClInclude Include="TaskManager.h" />
@@ -47,6 +50,7 @@
     <ClInclude Include="..\third_party\imgui\backends\imgui_impl_glfw.h" />
     <ClInclude Include="..\third_party\imgui\backends\imgui_impl_opengl3.h" />
     <ClInclude Include="..\third_party\imgui\backends\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="TerminalWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\third_party\imgui\misc\debuggers\imgui.natstepfilter" />

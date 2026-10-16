@@ -10,5 +10,6 @@ struct AppState
     bool showFileExplorer   = false; // Taskbar Icon Button 2: Unique UI Screen #2
     bool showTaskManager    = false; // Taskbar Icon Button 3: Task Manager
     int  selectedFileIndex  = 0;
+    bool showTerminal = true;
     std::chrono::steady_clock::time_point startTime = std::chrono::steady_clock::now();
 };
