@@ -34,3 +34,9 @@ Any malformed or skipped lines are also logged with their line number. Supported
 2. Ensure the configuration dropdown is set to **`Debug`** (or **`Release`**) and **`x64`**.
 3. Press **`F5`** (*Local Windows Debugger*) to launch the Desktop OS Emulator.
    - Use the red **`PWR`** button on the taskbar to shut down cleanly (the window close callback blocks the titlebar `X` button and `Alt+F4` per spec; use **`Shift+F5`** in Visual Studio if you ever need to force-stop debugging).
+
+## How to test
+1. Launch the emulator. The 10 processes start immediately.
+2. Type "screen -ls" every 1 to 2 seconds. With 4 cores and 100 ms per command, it takes about 25 seconds for everything to finish.
+3. Once all 10 are under “Finished processes”, type exit.
+4. Zip the logs/ folder and submit it.
